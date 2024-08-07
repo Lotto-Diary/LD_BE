@@ -1,16 +1,5 @@
 {
-    "totSellamnt": 109515089000,
+    "drwNo": 1131,
     "returnValue": "success",
-    "drwNoDate": "2024-07-27",
-    "firstWinamnt": 2263301219,
-    "drwtNo1": 15,
-    "drwtNo2": 19,
-    "drwtNo3": 21,
-    "drwtNo4": 25,
-    "drwtNo5": 27,
-    "drwtNo6": 28,
-    "bnusNo": 40,
-    "firstPrzwnerCo": 12,
-    "firstAccumamnt": 27159614628,
-    "drwNo": 1130
+    "numbers": "1,2,6,14,27,38,33"
 }

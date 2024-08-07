@@ -24,12 +24,14 @@ def fetch_and_save_lotto_data(drwNo):
     if response.status_code == 200:
         data = response.json()
         ordered_data = OrderedDict()
-        ordered_keys = ['totSellamnt', 'returnValue', 'drwNoDate', 'firstWinamnt', 
-                        'drwtNo1', 'drwtNo2', 'drwtNo3', 'drwtNo4', 'drwtNo5', 'drwtNo6', 
-                        'bnusNo', 'firstPrzwnerCo', 'firstAccumamnt', 'drwNo']
-        for key in ordered_keys:
-            if key in data:
-                ordered_data[key] = data[key]
+        
+        ordered_data['drwNo'] = data.get('drwNo')
+        ordered_data['returnValue'] = data.get('returnValue')
+        
+        numbers = [data.get(f'drwtNo{i}') for i in range(1, 7)]
+        numbers.append(data.get('bnusNo'))
+        ordered_data['numbers'] = ','.join(map(str, numbers))
+        
         filename = "latest_lotto.json"
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(ordered_data, f, ensure_ascii=False, indent=4)
